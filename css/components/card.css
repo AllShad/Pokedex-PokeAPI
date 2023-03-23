@@ -1,0 +1,7 @@
+#card{
+    background-color: blue;
+    width: 70vh;
+    height: 50vh;
+    position: absolute;
+    border-radius: 10px;
+}

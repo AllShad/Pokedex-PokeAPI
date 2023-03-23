@@ -1,0 +1,13 @@
+.picture{
+    width: 10em;
+    height: 10em;  
+    border: 2px solid red; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    border-radius: 8px;
+}
+.picture > h1{
+    font-size: 1.3em;
+}
