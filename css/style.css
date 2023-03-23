@@ -1,0 +1,34 @@
+@import url(./global.css);
+@import url(./components/group-type.css);
+
+main{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+body{
+    background-color: red;
+}
+
+#poke-logo{
+    width: 18em;
+}
+
+.poke-types{
+    width: 50%;
+    height: 30vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 3em;
+}
+
+
