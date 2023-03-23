@@ -10,9 +10,16 @@ async function getPokemon(urlPoke){
     const h1 = document.createElement('h1');
 
     image.src = data.sprites.front_default;
-    h1.textContent = data.name;
+    h1.textContent = data.name.toUpperCase();
+
     body.appendChild(h1);
     body.appendChild(image);
+
+    image.classList.add('pokemon-picture');
+    image.classList.add(h1.textContent);
+
+    h1.classList.add('pokemon-picture');
+    h1.classList.add(h1.textContent);
 }
 
 async function getPokemons(){
