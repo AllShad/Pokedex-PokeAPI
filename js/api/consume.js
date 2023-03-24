@@ -1,8 +1,8 @@
 const url = 'https://pokeapi.co/api/v2/pokemon';
 const loading = document.getElementById('loading');
-const main = document.querySelector('main');
+const section = document.querySelector('.screan');
 
-async function getPokemon(urlPoke){
+async function getPokemon(urlPoke, repeat, endReapts){
     const response = await fetch([urlPoke]);
     const data = await response.json();
 
@@ -24,10 +24,19 @@ async function getPokemon(urlPoke){
     h1.classList.add('pokemon-picture');
     h1.classList.add(h1.textContent);
 
-    main.appendChild(div); 
+    section.appendChild(div); 
+    
+    if(repeat == endReapts - 1){
+        const pokemon = document.querySelector('.screan').children
+        function teste () {
+            console.log(h1.textContent)    
+        }
 
-    const div1 = document.querySelector('.picture');
-    console.log(div1);
+        for(let poke of pokemon){
+            poke.addEventListener('click', teste)
+            console.log(poke)
+        }
+    }
 }
 
 async function getPokemons(){
@@ -37,8 +46,9 @@ async function getPokemons(){
     loading.classList.add('hide')
 
     for(let i = 0; i < data.results.length; i++){
-        getPokemon(data.results[i].url)  
-    }  
+        getPokemon(data.results[i].url, i, data.results.length) 
+    } 
+    
 }
 
 function click(){
@@ -55,7 +65,7 @@ function closeCardFunction(){
     card.classList.add('hide')
 }
 
-
 document.addEventListener('DOMContentLoaded', getPokemons);
-// document.addEventListener('click', makeCard);
+
+
 
