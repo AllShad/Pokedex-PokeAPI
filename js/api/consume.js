@@ -1,6 +1,8 @@
 const url = 'https://pokeapi.co/api/v2/pokemon';
 const loading = document.getElementById('loading');
 const section = document.querySelector('.screan');
+const closeCard = document.querySelector('#close');
+const loadingCard = document.querySelector('#loading-card');
 
 async function getPokemon(urlPoke, repeat, endReapts){
     const response = await fetch([urlPoke]);
@@ -28,13 +30,11 @@ async function getPokemon(urlPoke, repeat, endReapts){
     
     if(repeat == endReapts - 1){
         const pokemon = document.querySelector('.screan').children
-        function teste () {
-            console.log(h1.textContent)    
-        }
 
         for(let poke of pokemon){
-            poke.addEventListener('click', teste)
-            console.log(poke)
+            poke.addEventListener('click', function(){
+                fillInCard(poke.textContent);
+            }) 
         }
     }
 }
@@ -51,8 +51,21 @@ async function getPokemons(){
     
 }
 
-function click(){
-    alert('click')
+async function fillInCard(name){
+    const getPoke = url + '/' + name.toLowerCase();
+    const response = await fetch(getPoke)
+    const data = await response.json();
+    
+    makeCard();
+    loadingCard.classList.add('hide')
+    const pokeName = document.querySelector('#poke-name');
+    const pokeImage = document.querySelector('#poke-image')
+    const pokeDescription = document.querySelector('#poke-description')
+
+    pokeName.textContent = data.name.toUpperCase();
+    pokeImage.src = data.sprites.front_default;
+    pokeDescription.textContent = data.moves[0].move.name;
+    
 }
 
 const card = document.getElementById('card');
@@ -62,10 +75,11 @@ function makeCard(){
 }
 
 function closeCardFunction(){
-    card.classList.add('hide')
+    card.classList.add('hide');
+    console.log(card);
 }
 
 document.addEventListener('DOMContentLoaded', getPokemons);
-
+closeCard.addEventListener('click', closeCardFunction)
 
 

@@ -49,4 +49,6 @@ section{
 
 .hide{
     display: none;
+    background-color: azure;
 }
+
