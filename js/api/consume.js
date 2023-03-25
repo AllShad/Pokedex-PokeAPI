@@ -4,10 +4,16 @@ const section = document.querySelector('.screan');
 const closeCard = document.querySelector('#close');
 const loadingCard = document.querySelector('#loading-card');
 
-async function getPokemon(urlPoke, repeat, endReapts){
-    const response = await fetch([urlPoke]);
-    const data = await response.json();
+function getPokemon(urlPoke, repeat, endReapts){
+    fetch(urlPoke).then(function(response){
+        response.json().then(function(data){
+            showData(data, repeat, endReapts);
+        })
+    })
 
+}
+
+function showData(data ,repeat, endReapts){
     const image = document.createElement('img');
     const h1 = document.createElement('h1')
     const div = document.createElement('div');
@@ -40,15 +46,15 @@ async function getPokemon(urlPoke, repeat, endReapts){
 }
 
 async function getPokemons(){
-    const response = await fetch(url);
-    const data = await response.json();
+    fetch(url).then(function(response){
+        response.json().then(function(data){
+            loading.classList.add('hide')
 
-    loading.classList.add('hide')
-
-    for(let i = 0; i < data.results.length; i++){
-        getPokemon(data.results[i].url, i, data.results.length) 
-    } 
-    
+            for(let i = 0; i < data.results.length; i++){
+                getPokemon(data.results[i].url, i, data.results.length) 
+            } 
+        })
+    })
 }
 
 async function fillInCard(name){
@@ -81,5 +87,3 @@ function closeCardFunction(){
 
 document.addEventListener('DOMContentLoaded', getPokemons);
 closeCard.addEventListener('click', closeCardFunction)
-
-
