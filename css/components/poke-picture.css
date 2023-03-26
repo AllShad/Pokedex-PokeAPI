@@ -17,3 +17,8 @@
 .picture > h1{
     font-size: 1.3em;
 }
+
+.pokemon-picture{
+    background-color: white;
+    border-radius: 50%;
+}

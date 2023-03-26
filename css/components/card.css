@@ -40,19 +40,27 @@
 }
 
 #poke-image{
-    width: 10em;
+    display: flex;
+    width: 9em;
+    background-color: white;
+    border-radius: 50%;
 }
 
 #basic-info{
-    height: 12em;
+    height: 15em;
+    width: 11em;
     background-color: white;
     padding: 0.5em;
     border-radius: 5px;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #basic-atacks{
-    height: 12em;
+    height: 15em;
     background-color: white;
     padding: 0.5em;
     border-radius: 5px; 
