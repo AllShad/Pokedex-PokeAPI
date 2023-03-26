@@ -1,10 +1,73 @@
 #card{
-    background-color: blue;
+    background-color: red;
     width: 70vh;
-    height: 50vh;
+    height: 80vh;
     position: absolute;
     border-radius: 10px;
+    border: 5px solid black;
 }
 
+#card > section{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.style{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: row;
+    position: relative;
+}
+
+#close{
+    border: none;
+    background-color: transparent;
+}
+
+#close{
+    cursor: pointer;
+}
+
+#close > img{
+    width: 3em;
+}
+
+#poke-image{
+    width: 10em;
+}
+
+#basic-info{
+    height: 12em;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#basic-atacks{
+    height: 12em;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 5px; 
+    border: 1px solid black;  
+}
+
+#types{
+    background-color: white;
+    width: 95%;
+    padding: 0.5em;
+    height: 30%;
+    margin-bottom: 2em;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
 
 

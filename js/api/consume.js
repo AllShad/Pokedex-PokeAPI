@@ -3,6 +3,7 @@ const loading = document.getElementById('loading');
 const section = document.querySelector('.screan');
 const closeCard = document.querySelector('#close');
 const loadingCard = document.querySelector('#loading-card');
+const cardSection = document.querySelector('#card > section')
 
 function getPokemon(urlPoke, repeat, endReapts){
     fetch(urlPoke).then(function(response){
@@ -11,6 +12,18 @@ function getPokemon(urlPoke, repeat, endReapts){
         })
     })
 
+}
+
+async function getPokemons(){
+    fetch(url).then(function(response){
+        response.json().then(function(data){
+            loading.classList.add('hide')
+
+            for(let i = 0; i < data.results.length; i++){
+                getPokemon(data.results[i].url, i, data.results.length) 
+            } 
+        })
+    })
 }
 
 function showData(data ,repeat, endReapts){
@@ -39,29 +52,22 @@ function showData(data ,repeat, endReapts){
 
         for(let poke of pokemon){
             poke.addEventListener('click', function(){
-                fillInCard(poke.textContent);
+                getPokeFillCard(poke.textContent);
             }) 
         }
     }
 }
 
-async function getPokemons(){
-    fetch(url).then(function(response){
+function getPokeFillCard(name){
+    const getPoke = url + '/' + name.toLowerCase();
+    fetch(getPoke).then(function(response){
         response.json().then(function(data){
-            loading.classList.add('hide')
-
-            for(let i = 0; i < data.results.length; i++){
-                getPokemon(data.results[i].url, i, data.results.length) 
-            } 
+            fillInCard(data);
         })
     })
 }
 
-async function fillInCard(name){
-    const getPoke = url + '/' + name.toLowerCase();
-    const response = await fetch(getPoke)
-    const data = await response.json();
-    
+function fillInCard(data){
     makeCard();
     loadingCard.classList.add('hide')
     const pokeName = document.querySelector('#poke-name');
@@ -70,20 +76,58 @@ async function fillInCard(name){
 
     pokeName.textContent = data.name.toUpperCase();
     pokeImage.src = data.sprites.front_default;
-    pokeDescription.textContent = data.moves[0].move.name;
-    
+
+    fillAtacks(data);
+}
+
+function fillAtacks(data){
+    resetCard()
+    for(let i = 0; i < 5; i++){
+        const p = document.createElement('p');
+        const div = document.querySelector('#basic-atacks');
+
+        p.classList.add('atack');
+
+        p.textContent = data.moves[i].move.name.toUpperCase();
+        div.appendChild(p);
+    }
+
+    for(let a = 0; a < data.types.length; a++){
+        const p = document.createElement('p');
+        const div = document.querySelector('#types');
+        
+        p.classList.add('type');
+
+        p.textContent = data.types[a].type.name.toUpperCase();
+        div.appendChild(p);
+    }
+}
+
+function resetCard(){
+    const removeAtack = document.querySelectorAll('.atack');
+    const removeType = document.querySelectorAll('.type');
+    for(let leftAtack of removeAtack){
+        leftAtack.remove();
+    }
+
+    for(let leftType of removeType){
+        leftType.remove();
+    }
 }
 
 const card = document.getElementById('card');
 
 function makeCard(){
     card.classList.remove('hide');
+    cardSection.classList.remove('hide');
+    cardSection.classList.add('style');
 }
 
 function closeCardFunction(){
     card.classList.add('hide');
-    console.log(card);
+    cardSection.classList.add('hide');
+    cardSection.classList.remove('style')
 }
 
 document.addEventListener('DOMContentLoaded', getPokemons);
-closeCard.addEventListener('click', closeCardFunction)
+closeCard.addEventListener('click', closeCardFunction);
