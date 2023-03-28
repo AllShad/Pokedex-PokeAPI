@@ -1,0 +1,28 @@
+.search{
+    background-color: white;
+    width: 12em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+    gap: 1em;
+    border: 2px solid black;
+    transition: transform 0.3s;
+}
+
+.search:hover{
+    transform: scale(1.2);
+}
+
+.search > img{
+    width: 2em;
+    text-decoration: none;
+}
+
+.search > a{
+    font-size: 1.2em;
+    color: black;
+    text-decoration: none;
+}
+

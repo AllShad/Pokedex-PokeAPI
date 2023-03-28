@@ -1,5 +1,6 @@
 @import url(./global.css);
 @import url(./components/group-type.css);
+@import url(./components/button-search.css);
 
 main{
     width: 100%;
@@ -19,16 +20,8 @@ body{
     width: 18em;
 }
 
-.poke-types{
-    width: 50%;
-    height: 30vh;
-    background-color: white;
-    border-radius: 10px;
+#search{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 3em;
+    gap: 2em;
 }
-
 
