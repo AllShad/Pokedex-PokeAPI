@@ -7,23 +7,29 @@
     border: 5px solid black;
 }
 
-#card > section{
+.top-content{
+    display: flex;
+    gap: 3em;
+}
+
+/* #card > section{
     background-color: transparent;
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 10px;
     margin: 0;
-}
+} */
 
 .style{
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: space-around;
-    align-items: start;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
+    gap: 1em;
 }
 
 #close{
@@ -69,7 +75,7 @@
 
 #types{
     background-color: white;
-    width: 95%;
+    width: 88%;
     padding: 0.5em;
     height: 30%;
     margin-bottom: 2em;

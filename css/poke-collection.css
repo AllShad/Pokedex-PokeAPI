@@ -1,6 +1,7 @@
 @import url(./global.css);
 @import url(./components/poke-picture.css);
 @import url(./components/card.css);
+@import url(./components/content.css);
 
 body{
     display: flex;
@@ -30,21 +31,6 @@ main{
     height: 100%;
     justify-content: center;
     align-items: center;
-}
-
-section{
-    display: flex;
-    width: 80%;
-    height: 95%;
-    flex-wrap: wrap;
-    gap: 2em;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 2em;
-    border-radius: 10px;
-    margin-top: 2em;
-    margin-bottom: 2em;
 }
 
 .hide{
