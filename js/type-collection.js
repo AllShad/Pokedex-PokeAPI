@@ -23,4 +23,4 @@ function addOnScrean(data){
     section.appendChild(div);
 }
 
-addOnScrean()
+console.log(teste);
