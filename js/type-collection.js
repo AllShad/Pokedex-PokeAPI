@@ -1,3 +1,5 @@
+import { pokeName } from "./index.js";
+
 const url = 'https://pokeapi.co/api/v2/type';
 const section = document.getElementById('content');
 
@@ -5,6 +7,8 @@ function getType(){
     fetch(url).then(function(response){
         response.json().then(function(data){
             console.log(data)
+        }).catch(function(error){
+            alert('Erro no servidor')
         })
     })
 }

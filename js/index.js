@@ -6,10 +6,15 @@ function getPokeByName(){
     const getPoke = url + search.value;
     fetch(getPoke).then(function(response){
         response.json().then(function(data){
-            console.log(data)
-
-        }).catch(err => console.log('Erro na chamada'))
+            createModal();
+        }).catch(function(error){
+            alert('Pokémon não encontrado')  
+        })
     })
+}
+
+function createModal(){
+
 }
 
 buttonSearch.addEventListener('click', getPokeByName);
