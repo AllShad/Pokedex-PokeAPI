@@ -1,5 +1,6 @@
 @import url(../css/global.css);
 @import url(./components/content.css);
+@import url(./components/poke-picture.css);
 
 body{
     background-color: red;
