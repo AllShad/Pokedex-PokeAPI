@@ -1,3 +1,4 @@
+import { colorType } from './functions/functions.js'
 const url = 'https://pokeapi.co/api/v2/type';
 const section = document.getElementById('content');
 
@@ -27,6 +28,8 @@ function addOnScrean(data, length){
     div.appendChild(img);
 
     div.classList.add('picture')
+
+    colorType(data.results[length].name, div);
 
     section.appendChild(div);
 
