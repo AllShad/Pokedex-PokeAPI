@@ -24,3 +24,7 @@ body{
     align-items: center;
 }
 
+.poke-picture{
+    background-color: white;
+    border-radius: 50%;
+}
