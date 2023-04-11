@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex - PokeAPI</title>
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/index.css">
+    <link id="styleCSS" rel="stylesheet" href="./css/index.css">
     <script type="module" src="./js/index.js" defer></script>
 </head>
 <body>
+    <header class="hide">
+        <img id="poke-logo" src="./assets/logo.png" alt="Logo Pokémon">
+
+        <div id="poke-search-header">
+            <img src="./assets/icons8-pesquisar-50.png" alt="logo-pesquisa">
+            <input id="poke-search-input-header" type="search" placeholder="Pesquise o nome do Pokémon">
+            <button id="poke-search-button-header">Buscar</button>
+        </div>  
+    </header>
+
     <main>
+        <section id="show-informations" class="hide">
+            
+        </section>
+
         <img id="poke-logo" src="./assets/logo.png" alt="Logo Pokémon">
 
         <div id="poke-search">

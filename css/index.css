@@ -1,6 +1,7 @@
 @import url(./global.css);
 @import url(./components/group-type.css);
 @import url(./components/button-search.css);
+@import url(./components/search-bar.css);
 
 main{
     width: 100%;
@@ -25,38 +26,6 @@ body{
     gap: 2em;
 }
 
-#poke-search{
-    width: 27em;
-    height: 3.5em;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    border: 3px solid yellow;
-    background-color: white;
-    border-radius: 1em;
-}
-
-#poke-search-input{
-    width: 100%;
-    height:100%;
-    padding: 1em;
-    transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: none;
-}
-
-#poke-search > button{
-    height: 100%;
-    background-color: yellow;
-    border: none;
-    width: 20%; 
-    transition: 0.3s;
-    border-radius: 0 1em 1em 0 ;
-}
-
-#poke-search > button:hover{
-    cursor: pointer;
+.hide{
+    display: none;
 }

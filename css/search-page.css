@@ -1,0 +1,28 @@
+@import url(./global.css);
+@import url(./components/search-bar.css);
+
+body{
+    background-color: red;
+}
+
+#poke-logo{
+    width: 18em;
+}
+
+#poke-search{
+    display: none;
+}
+
+#search{
+    display: none;
+}
+
+main > img {
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
