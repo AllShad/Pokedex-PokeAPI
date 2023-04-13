@@ -7,29 +7,16 @@ const closeCard = document.querySelector('#close');
 const loadingCard = document.querySelector('#loading-card');
 const cardSection = document.querySelector('#card > section')
 
-function getPokemon(urlPoke){
-    fetch(urlPoke).then(function(response){
-        response.json().then(function(data){
-            showData(data);
-        })
-    })
-
-}
-
 function getPokeFillCard(name){
     const getPoke = url + '/' + name.toLowerCase();
-    fetch(getPoke).then(function(response){
-        response.json().then(function(data){
-            fillInCard(data);
-        })
-    })
+    consumeApi.getPokemons(getPoke).then((pokemon) => fillInCard(pokemon))
 }
 
 async function getPokemons(){
     loading.classList.add('hide')
     for(let i = 0; i < 20; i++){
         const getPokeRandom = url + '/' + Math.floor(Math.random() * 1000)
-        getPokemon(getPokeRandom);
+        consumeApi.getPokemons(getPokeRandom).then((pokemon) => showData(pokemon))
     }
 }
 

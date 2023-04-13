@@ -7,16 +7,13 @@ const content = document.querySelector('#content')
 function getPokeByType(){
     const urlGet = url + type.toLowerCase();
 
-    fetch(urlGet).then(function(response){
-        response.json().then(function(data){
-            for(let i = 0; i < data.pokemon.length; i++){
-                addOnScrean(data, i)
-            }
-        }).catch(function(erro){
-            alert('Erro no servidor')
-        })
+    consumeApi.getPokemons(urlGet).then((pokemon) => {
+        for(let i = 0; i < pokemon.pokemon.length; i++){
+            addOnScrean(pokemon, i)
+        }
     })
 }
+
 
 function getImages(data,i, name){
     const getImagesUrl = data.pokemon[i].pokemon.url;

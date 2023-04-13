@@ -3,14 +3,10 @@ const url = 'https://pokeapi.co/api/v2/type';
 const section = document.getElementById('content');
 
 function getType(){
-    fetch(url).then(function(response){
-        response.json().then(function(data){
-            for(let i = 0; i < data.results.length; i++){
-                addOnScrean(data,i);
-            }
-        }).catch(function(error){
-            alert('Erro no servidor')
-        })
+    consumeApi.getPokemons(url).then((pokemon) => {
+        for(let i = 0; i < pokemon.results.length; i++){
+            addOnScrean(pokemon,i);
+        }
     })
 }
 
