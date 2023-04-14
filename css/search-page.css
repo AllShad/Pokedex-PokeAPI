@@ -9,12 +9,25 @@ body{
     width: 18em;
 }
 
+#poke-logo:hover{
+    cursor: pointer;
+}
+
 #poke-search{
     display: none;
 }
 
 #search{
     display: none;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
 }
 
 main > img {
@@ -25,4 +38,11 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+#show-informations{
+    background-color: white;
+    width: 80%;
+    height: 70vh;
+    border-radius: 10px;
 }
