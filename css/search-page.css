@@ -45,4 +45,23 @@ header{
     width: 80%;
     height: 70vh;
     border-radius: 10px;
+    display: flex;
+}
+
+#show-informations > aside{
+    width: 35%;
+    padding: 2em;
+    border: 3px solid black;
+}
+
+#show-informations > aside:first-child{
+    border-radius: 10px 0 0 10px;
+}
+
+#show-informations > aside:last-child{
+    border-radius: 0 10px 10px 0;
+}
+
+.basic-info > img{
+    width: 10em;
 }
