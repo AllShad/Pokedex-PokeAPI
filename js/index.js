@@ -43,41 +43,36 @@ function addPart(pokemon){
 
     const types = pokemon.types
     const typesList = document.createElement('ul');
-    infos[0].appendChild(typesList);
-
-    for(let type of types){
+    types.map((type) => {
         const li = document.createElement('li');
         const h1 = document.createElement('h1')
         h1.textContent = type.type.name;
         li.appendChild(h1);
         typesList.appendChild(li); 
-    }
+    })
+    infos[0].appendChild(typesList);    
 
     const atacks = pokemon.abilities;
-
     const atackList = document.createElement('ul')
-    infos[1].appendChild(atackList)
-
-    for(let atack of atacks){
+    atacks.map((atack) => {
         const li = document.createElement('li');
         const h1 = document.createElement('h1')
         h1.textContent = atack.ability.name;
         li.appendChild(h1);
-        atackList.appendChild(li);
-    }
+        atackList.appendChild(li); 
+    })
+    infos[1].appendChild(atackList)
 
     const status = pokemon.stats;
-    const statusList = document.createElement('ul')
-    infos[2].appendChild(statusList);
-
-    for(let stats of status){
+    const statusList = document.createElement('ul');
+    status.map((status) => {
         const li = document.createElement('li');
         const h1 = document.createElement('h1')
-        h1.textContent = `${stats.stat.name}: ${stats.base_stat}`
+        h1.textContent = status.stat.name;
         li.appendChild(h1);
-        statusList.appendChild(li);
-    }
-
+        statusList.appendChild(li); 
+    })    
+    infos[2].appendChild(statusList);
 }
 
 buttonSearch.addEventListener('click', getPokeByName);

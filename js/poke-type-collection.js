@@ -14,7 +14,6 @@ function getPokeByType(){
     })
 }
 
-
 function getImages(data,i, name){
     const getImagesUrl = data.pokemon[i].pokemon.url;
 
