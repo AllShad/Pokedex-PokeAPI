@@ -43,7 +43,7 @@ function showData(data){
 
     section.appendChild(div); 
 
-    colorType(type, div)
+    colorType(type, div);
     
     const pokemon = document.querySelector('.screan').children
 
@@ -64,7 +64,9 @@ function fillInCard(data){
     pokeName.textContent = data.name.toUpperCase();
     pokeImage.src = data.sprites.front_default;
 
-    const div = document.querySelector('#card');
+    const div = document.querySelector('.line');
+    //Continuar daqui
+    pokeImage.style= 'border: 3px solid blue';
     colorType(data.types[0].type.name, div)
 
     fillAtacks(data);

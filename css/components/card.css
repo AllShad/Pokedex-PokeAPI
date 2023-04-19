@@ -1,34 +1,25 @@
 #card{
-    background-color: red;
+    background-color: white;
     width: 70vh;
     height: 80vh;
     position: absolute;
     border-radius: 10px;
-    border: 5px solid black;
+    border: 5px solid red;
 }
 
 .top-content{
     display: flex;
-    gap: 3em;
+    justify-content: center;
+    width: 20em;
 }
-
-/* #card > section{
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    margin: 0;
-} */
 
 .style{
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    position: relative;
     gap: 1em;
 }
 
@@ -49,39 +40,46 @@
     display: flex;
     width: 9em;
     background-color: white;
+    border: 3px solid red;
     border-radius: 50%;
+    position: absolute;
+}
+
+.line {
+    width: 70%;
+    height: 2px;
+    background-color: red;
+    position: absolute;
 }
 
 #basic-info{
-    height: 15em;
-    width: 11em;
-    background-color: white;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid black;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 60%;
+    gap: 1em;
 }
 
-#basic-atacks{
-    height: 15em;
-    background-color: white;
-    padding: 0.5em;
-    border-radius: 5px; 
-    border: 1px solid black;  
+.bottom-content{
+    display: flex;
+    align-items: center;
+    width: 20em;
 }
 
-#types{
-    background-color: white;
-    width: 88%;
-    padding: 0.5em;
-    height: 30%;
-    margin-bottom: 2em;
-    border-radius: 10px;
-    border: 1px solid black;
-    
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8em;
+}
+
+.line-bottom{
+    width: 50%;
+    height: 2px;
+    background-color: black;
+    transform: rotate(90deg);
 }
 
 
