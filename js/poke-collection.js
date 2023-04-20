@@ -1,5 +1,7 @@
 import { colorType } from './functions/functions.js'
+import { colorTypeInternal } from './functions/internalColorType.js';
 
+const card = document.getElementById('card');
 const url = 'https://pokeapi.co/api/v2/pokemon';
 const loading = document.getElementById('loading');
 const section = document.querySelector('.screan');
@@ -65,8 +67,9 @@ function fillInCard(data){
     pokeImage.src = data.sprites.front_default;
 
     const div = document.querySelector('.line');
-    //Continuar daqui
-    pokeImage.style= 'border: 3px solid blue';
+    let color = colorTypeInternal(data.types[0].type.name)
+    card.style = `border: 3px solid ${color}`;
+    pokeImage.style= `border: 3px solid ${color}`;
     colorType(data.types[0].type.name, div)
 
     fillAtacks(data);
@@ -106,8 +109,6 @@ function resetCard(){
         leftType.remove();
     }
 }
-
-const card = document.getElementById('card');
 
 function makeCard(){
     card.classList.remove('hide');
