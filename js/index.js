@@ -1,3 +1,5 @@
+import { colorTypeInternal } from './functions/internalColorType.js'
+
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 const search = document.getElementById('poke-search-input');
 const buttonSearch = document.getElementById('poke-search-button');
@@ -29,6 +31,17 @@ function createModal(pokemon){
     addPart(pokemon);
 }
 
+function setColor(type){
+    const div = document.querySelector('.basic-info > img');
+    const line = document.querySelector('.line');
+    const panel = document.querySelector('#show-informations');
+
+    const color = colorTypeInternal(type)
+    panel.style = `border: 4px solid ${color}`;
+    line.style  = `background-color: ${color}`;
+    div.style   = `border: 2px solid ${color}`;
+}
+
 function addPart(pokemon){
     const infos = document.querySelectorAll('.basic-info')
 
@@ -43,36 +56,39 @@ function addPart(pokemon){
 
     const types = pokemon.types
     const typesList = document.createElement('ul');
+
+    setColor(types[0].type.name)
+
     types.map((type) => {
         const li = document.createElement('li');
-        const h1 = document.createElement('h1')
-        h1.textContent = type.type.name;
+        const h1 = document.createElement('h1');
+        h1.textContent = type.type.name.toUpperCase();
         li.appendChild(h1);
         typesList.appendChild(li); 
     })
-    infos[0].appendChild(typesList);    
+    infos[1].appendChild(typesList);    
 
     const atacks = pokemon.abilities;
     const atackList = document.createElement('ul')
     atacks.map((atack) => {
         const li = document.createElement('li');
         const h1 = document.createElement('h1')
-        h1.textContent = atack.ability.name;
+        h1.textContent = atack.ability.name.toUpperCase();
         li.appendChild(h1);
         atackList.appendChild(li); 
     })
-    infos[1].appendChild(atackList)
+    infos[2].appendChild(atackList)
 
     const status = pokemon.stats;
     const statusList = document.createElement('ul');
     status.map((status) => {
         const li = document.createElement('li');
         const h1 = document.createElement('h1')
-        h1.textContent = status.stat.name;
+        h1.textContent = `${status.stat.name.toUpperCase()}: ${status.base_stat}`;
         li.appendChild(h1);
         statusList.appendChild(li); 
     })    
-    infos[2].appendChild(statusList);
+    infos[3].appendChild(statusList);
 }
 
 buttonSearch.addEventListener('click', getPokeByName);

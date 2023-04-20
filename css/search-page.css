@@ -42,26 +42,50 @@ header{
 
 #show-informations{
     background-color: white;
-    width: 80%;
+    width: 60%;
     height: 70vh;
     border-radius: 10px;
     display: flex;
+    justify-content: flex-start;
+    gap: 2em;
+    align-items: center;
+    flex-direction: column;
 }
 
-#show-informations > aside{
-    width: 35%;
-    padding: 2em;
-    border: 3px solid black;
-}
-
-#show-informations > aside:first-child{
-    border-radius: 10px 0 0 10px;
-}
-
-#show-informations > aside:last-child{
-    border-radius: 0 10px 10px 0;
+.poke-image{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .basic-info > img{
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+.basic-info{
+    z-index: 10000;
+}
+
+.line{
+    width: 35em;
+    height: 2px;
+    background-color: red;
+    position: relative;
+    bottom: 3.5em;    
+}
+
+.poke-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line-aside{
     width: 10em;
+    height: 2px;
+    background-color: black;
+    transform: rotate(90deg);
 }
