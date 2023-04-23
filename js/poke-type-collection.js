@@ -1,12 +1,13 @@
 import { colorType } from './functions/functions.js'
 
+const goToTop = document.querySelector('.goToTop');
+
 const type = localStorage.getItem('type');
 const url = 'https://pokeapi.co/api/v2/type/';
 const content = document.querySelector('#content')
 
 function getPokeByType(){
     const urlGet = url + type.toLowerCase();
-
     consumeApi.getPokemons(urlGet).then((pokemon) => {
         for(let i = 0; i < pokemon.pokemon.length; i++){
             addOnScrean(pokemon, i)
@@ -17,10 +18,8 @@ function getPokeByType(){
 function getImages(data,i, name){
     const getImagesUrl = data.pokemon[i].pokemon.url;
 
-    fetch(getImagesUrl).then(function(response){
-        response.json().then(function(dataImages){
-            addImage(dataImages.sprites.front_default, name);
-        })
+    consumeApi.getPokemons(getImagesUrl).then((response) => {
+        addImage(response.sprites.front_default, name);
     })
 }
 
@@ -30,7 +29,6 @@ function addImage(data, name){
 
     const div = document.querySelector(`.${name}`);
     image.classList.add('poke-picture')
-    console.log(div)
     div.appendChild(image);
     
 }
@@ -52,3 +50,13 @@ function addOnScrean(data, i){
 }
 
 getPokeByType()
+
+goToTop.addEventListener('click', () => {
+    window.scrollTo(
+        {
+            top : 0,
+            left : 0,
+            behavior : 'smooth'
+        }
+    );
+})
