@@ -40,4 +40,8 @@ body{
        justify-content: center;
        align-items: center;
     }
+
+    .search:hover{
+        transform: scale(1.1);
+    }
 }
