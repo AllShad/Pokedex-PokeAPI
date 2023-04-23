@@ -29,3 +29,15 @@ body{
 .hide{
     display: none;
 }
+
+@media (max-width: 500px) {
+    :is(#poke-search, #search){
+        width: 350px;
+    }
+
+    #search{
+       gap: 0.5em;
+       justify-content: center;
+       align-items: center;
+    }
+}

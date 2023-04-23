@@ -1,0 +1,11 @@
+.goToTop{
+    width: 7em;
+    height: 2em;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 1em;
+    text-decoration: none;
+}

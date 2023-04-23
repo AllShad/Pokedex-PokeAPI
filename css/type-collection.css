@@ -24,3 +24,18 @@ body{
     align-items: center;
 }
 
+@media (max-width: 500px) {
+    #content{
+        width: 90%;
+    }
+
+    .picture{
+        width: 7.5em;
+    }
+
+    #content{
+        gap: 0.8em;
+    }
+
+}
+

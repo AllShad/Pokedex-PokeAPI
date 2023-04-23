@@ -89,3 +89,30 @@ header{
     background-color: black;
     transform: rotate(90deg);
 }
+
+@media (max-width: 500px) {
+    #show-informations{
+        width: 85%;
+        height: 100vh;
+        margin-bottom: 2em;
+    }
+
+    .line{
+        width: 15em;
+    }
+
+    #poke-logo{
+        width: 10em;
+    }
+
+    .poke-content{
+        flex-direction: column;
+        gap: 2em;
+        align-items: start;
+    }
+
+    .line-aside{
+        transform: rotate(0deg);
+        
+    }
+}
